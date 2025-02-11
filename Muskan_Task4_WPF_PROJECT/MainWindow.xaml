@@ -1,0 +1,41 @@
+﻿<Window x:Class="Muskan_Task4_WPF_PROJECT.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="WPF In-Class Lab 4" Height="350" Width="500">
+    <Grid ShowGridLines="True">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <!-- Cell 1: Input Fields -->
+        <StackPanel Grid.Row="0" Grid.Column="0" Margin="10">
+            <TextBlock Text="First Name:" FontWeight="Bold"/>
+            <TextBox Name="FirstNameTextBox" Width="150"/>
+            <TextBlock Text="Last Name:" FontWeight="Bold"/>
+            <TextBox Name="LastNameTextBox" Width="150"/>
+        </StackPanel>
+
+        <!-- Cell 2: ListBox -->
+        <ListBox Grid.Row="0" Grid.Column="1" Name="NameListBox" Margin="10"
+                 SelectionChanged="NameListBox_SelectionChanged" />
+
+        <!-- Cell 3: Submit Button -->
+        <StackPanel Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center">
+            <Button Content="Submit" Width="100" Click="SubmitButton_Click"/>
+        </StackPanel>
+
+        <!-- Cell 4: Instructions -->
+        <TextBlock Grid.Row="1" Grid.Column="1" Margin="10" FontWeight="Bold" TextWrapping="Wrap"><Run Text="1. Add First and Last Names "/><LineBreak/><Run/><LineBreak/><Run Text="2. Click on Submit to populate listbox "/><LineBreak/><Run/><LineBreak/><Run Text="3. Click on an item in the listbox. The selected item should display in a popup message"/></TextBlock>
+
+        <!-- Horizontal Divider Line -->
+        <Border Grid.Row="0" Grid.ColumnSpan="2" BorderThickness="0,0,0,2" BorderBrush="Black" VerticalAlignment="Bottom"/>
+
+        <!-- Vertical Divider Line -->
+        <Border Grid.Column="0" Grid.RowSpan="2" BorderThickness="0,0,2,0" BorderBrush="Black" HorizontalAlignment="Right"/>
+    </Grid>
+</Window>
